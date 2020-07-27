@@ -1,22 +1,24 @@
-#include<stdio.h>
-int primetest(int NUM)
-{
-    int f=1;
-    for(int i=2;i*i<=NUM;i++)
-    {
-        if(NUM%i==0)
-            f=0;
-    }
-   return(f);
-}
+#include <stdio.h>
+int primetest(int);
 int main()
 {
-    int a,b;
-    scanf("%d",&a);
-    b=primetest(a);
-    if(b==0)
-        printf("COMPOSITE");
+    int n, result;
+    scanf("%d",&n);
+    result=primetest(n);
+    if(result==1)
+    printf("PRIME\n");
     else
-        printf("PRIME");
+    printf("COMPOSITE\n");
+
     return 0;
+}
+int primetest(int k)
+{
+int c;
+for(c=2;c<=k-1;c++)
+{
+    if(k%c==0)
+    return 0;
+}
+return 1;
 }
